@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 
 const Home = () => (
     <div>
-        <div className="jumbotron" style={{backgroundImage:`url(${require("../Images/stadium.jpg")})`,backgroundSize: "100%"}}>
-        <h1 style={{fontFamily: "Italic",color: "#ffffff"}}>
-            Beyond the Pavilion
+        <div className="jumbotron">
+        <h1 style={{fontFamily: "Italic",color: "#000000"}}>
+            Tune Zone
         </h1>
         </div>
         <div className="container">

@@ -19,7 +19,7 @@ const Menu = ({history}) => (
             </li>
             
             {!isAuthenticated() && (
-                <>
+                <React.Fragment>
                     <li className="nav-item">  
                         <Link  className = "nav-link" style = {isActive(history,`/post/create`)} to = {`/post/create`}> 
                             create Post
@@ -31,7 +31,7 @@ const Menu = ({history}) => (
                     <li className="nav-item">
                         <Link className = "nav-link" style = {isActive(history,"/signin")} to = "/signin">Sign In</Link> 
                     </li>
-                </>
+                </React.Fragment>
             )}
 
             
@@ -40,7 +40,7 @@ const Menu = ({history}) => (
             </li>
 
             {isAuthenticated() && (
-                <> 
+                <React.Fragment> 
                     <li className="nav-item">  
                         <Link  className = "nav-link" style = {isActive(history,`/findpeople`)} to = {`/findpeople`}> 
                             Find People
@@ -59,7 +59,19 @@ const Menu = ({history}) => (
                         </span> 
                     </li>
     
-                </>
+                </React.Fragment>
+            )}
+
+            {isAuthenticated() && isAuthenticated().user.role === "admin" && (
+                <li className="nav-item">
+                    <Link
+                        to={`/admin`}
+                        style={isActive(history, `/admin`)}
+                        className="nav-link"
+                    >
+                        Admin
+                    </Link>
+                </li>
             )}
             
             

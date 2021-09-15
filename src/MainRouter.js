@@ -16,6 +16,8 @@ import ForgotPassword from './user/ForgotPassword';
 import ResetPassword from './user/ResetPassword';
 import About from './core/About'
 import Products from './core/Products'
+import Admin from './admin/Admin'
+
 
 const MainRouter = () => (
     <div>
@@ -33,6 +35,7 @@ const MainRouter = () => (
             <PrivateRoute exact path="/user/edit/:userId" component = {EditProfile}/>
             <PrivateRoute exact path="/user/:userId" component = {Profile}/>
             <PrivateRoute exact path="/findPeople" component = {FindPeople}/>
+            <PrivateRoute exact path="/admin" component={Admin} />
             <Route exact path="/about" component = {About}></Route>
             <Route exact path="/products" component = {Products}></Route>
         </Switch>

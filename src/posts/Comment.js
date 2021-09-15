@@ -112,9 +112,19 @@ class Comment extends Component {
                                                 {isAuthenticated().user && 
                                                     isAuthenticated().user._id === comment.postedBy._id && 
                                                     (
-                                                    <>
+                                                    <React.Fragment>
                                                         <button onClick={() => this.deleteConfirmed(comment)} className="btn btn-raised btn-danger float-right mr-1">Remove</button>
-                                                    </>
+                                                    </React.Fragment>
+                                                    )
+                                                    }
+                                                </span>
+                                                <span>
+                                                {isAuthenticated().user && 
+                                                    isAuthenticated().user.role == "admin" && 
+                                                    (
+                                                    <React.Fragment>
+                                                        <button onClick={() => this.deleteConfirmed(comment)} className="btn btn-raised btn-danger float-right mr-1">Remove-admin</button>
+                                                    </React.Fragment>
                                                     )
                                                     }
                                                 </span>
